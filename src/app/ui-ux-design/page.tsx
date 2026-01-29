@@ -97,7 +97,7 @@ export default function UiUxDesignPage() {
                 </div>
 
                 <div className={cn(
-                    "grid transition-[grid-template-rows] duration-0 md:duration-500 ease-in-out transform-gpu",
+                    "grid transition-[grid-template-rows] duration-0 md:duration-500 ease-in-out",
                     isInfoExpanded ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"
                 )}>
                     <div className="overflow-hidden">
@@ -185,7 +185,7 @@ export default function UiUxDesignPage() {
 
                                 {/* Phase Content (Collapsible) */}
                                 <div className={cn(
-                                    "grid transition-[grid-template-rows] duration-0 md:duration-500 ease-in-out transform-gpu",
+                                    "grid transition-[grid-template-rows] duration-0 md:duration-500 ease-in-out",
                                     isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                                 )}>
                                     <div className="overflow-hidden bg-white/50">
