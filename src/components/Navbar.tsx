@@ -17,9 +17,15 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isToggling, setIsToggling] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const pathname = usePathname();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   // Play animation on route change
   useEffect(() => {
@@ -34,6 +40,14 @@ export function Navbar() {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
+  };
+
+  // Safe toggle with debounce protection
+  const handleMenuToggle = () => {
+    if (isToggling) return; // Prevent rapid clicks
+    setIsToggling(true);
+    setMobileMenuOpen(!mobileMenuOpen);
+    setTimeout(() => setIsToggling(false), 300); // 300ms debounce
   };
 
   return (
@@ -115,7 +129,8 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={handleMenuToggle}
+            disabled={isToggling}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -124,8 +139,8 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm pt-24 md:hidden">
-          <div className="flex flex-col items-center gap-6 p-6">
+        <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm pt-24 md:hidden">
+          <div className="flex flex-col items-center gap-6 p-6 pointer-events-auto">
             {navLinks.map((link) => {
                const isActive = pathname === link.href;
                return (
