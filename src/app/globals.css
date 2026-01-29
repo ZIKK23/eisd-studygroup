@@ -21,23 +21,20 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Prevent Safari from hiding off-screen elements - STRONGER FIX */
-/* Forces WebKit to paint the element and its layout even if off-screen */
-* {
-  -webkit-transform: translateZ(0);
-}
-
+/* Prevent Safari from hiding off-screen elements */
+/* Note: We avoid applying transform to nav to preserve fixed positioning */
 main,
 section,
-nav,
-div,
-[class*="backdrop-blur"],
-[class*="blur-"] {
+div:not(.fixed):not([class*="top-"]) {
   content-visibility: visible !important;
   contain-intrinsic-size: auto;
-  /* Ensure painting happens */
-  transform: translateZ(0); 
-  -webkit-font-smoothing: antialiased;
+}
+
+/* Force GPU rendering for scrollable content, but NOT on fixed elements */
+main > *,
+section > * {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 @keyframes scroll {
