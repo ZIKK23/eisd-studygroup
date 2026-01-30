@@ -1,16 +1,16 @@
 import Image from "next/image";
 
 const documentationImages = [
-  "/images/dokum-sg/dokum (1).jpg",
-  "/images/dokum-sg/dokum (2).jpg",
-  "/images/dokum-sg/dokum (3).jpg",
-  "/images/dokum-sg/dokum (4).jpg",
-  "/images/dokum-sg/dokum (5).jpg",
-  "/images/dokum-sg/dokum (6).jpg",
-  "/images/dokum-sg/dokum (7).jpg",
-  "/images/dokum-sg/dokum (8).jpg",
-  "/images/dokum-sg/dokum (9).jpg",
-  "/images/dokum-sg/dokum (10).jpg",
+  "/images/dokum-sg/dokum (1).JPG",
+  "/images/dokum-sg/dokum (2).JPG",
+  "/images/dokum-sg/dokum (3).JPG",
+  "/images/dokum-sg/dokum (4).JPG",
+  "/images/dokum-sg/dokum (5).JPG",
+  "/images/dokum-sg/dokum (6).JPG",
+  "/images/dokum-sg/dokum (7).JPG",
+  "/images/dokum-sg/dokum (8).JPG",
+  "/images/dokum-sg/dokum (9).JPG",
+  "/images/dokum-sg/dokum (10).JPG",
 ];
 
 export function Documentation() {
