@@ -72,6 +72,7 @@ export function Navbar() {
                     src="/images/logo-eisd.png" 
                     alt="EISD Logo" 
                     fill
+                    sizes="40px"
                     className="object-contain scale-[1.2]"
                     priority
                  />

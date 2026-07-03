@@ -15,6 +15,7 @@ export function Footer() {
                 src="/images/logo-vertical-eisd.png"
                 alt="EISD Laboratory Logo"
                 fill
+                sizes="160px"
                 className="object-contain object-left"
               />
             </div>

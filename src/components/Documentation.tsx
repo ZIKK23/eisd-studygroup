@@ -1,16 +1,16 @@
 import Image from "next/image";
 
 const documentationImages = [
-  "/images/dokum-sg/dokum (1).JPG",
-  "/images/dokum-sg/dokum (2).JPG",
-  "/images/dokum-sg/dokum (3).JPG",
-  "/images/dokum-sg/dokum (4).JPG",
-  "/images/dokum-sg/dokum (5).JPG",
-  "/images/dokum-sg/dokum (6).JPG",
-  "/images/dokum-sg/dokum (7).JPG",
-  "/images/dokum-sg/dokum (8).JPG",
-  "/images/dokum-sg/dokum (9).JPG",
-  "/images/dokum-sg/dokum (10).JPG",
+  "/images/dokum-sg/dokum (1).webp",
+  "/images/dokum-sg/dokum (2).webp",
+  "/images/dokum-sg/dokum (3).webp",
+  "/images/dokum-sg/dokum (4).webp",
+  "/images/dokum-sg/dokum (5).webp",
+  "/images/dokum-sg/dokum (6).webp",
+  "/images/dokum-sg/dokum (7).webp",
+  "/images/dokum-sg/dokum (8).webp",
+  "/images/dokum-sg/dokum (9).webp",
+  "/images/dokum-sg/dokum (10).webp",
 ];
 
 export function Documentation() {
@@ -42,6 +42,8 @@ export function Documentation() {
                   src={src}
                   alt={`Documentation ${index + 1}`}
                   fill
+                  sizes="(max-width: 640px) 300px, 400px"
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="object-cover"
                 />
              </div>
@@ -56,6 +58,7 @@ export function Documentation() {
                   src={src}
                   alt={`Documentation ${index + 1}`}
                   fill
+                  sizes="(max-width: 640px) 300px, 400px"
                   className="object-cover"
                 />
              </div>
